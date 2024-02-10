@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+    stdin_open: true
+    tty: true
