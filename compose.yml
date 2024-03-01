@@ -8,5 +8,11 @@ services:
       - type: bind
         source: .
         target: /workspace
+      - type: volume
+        source: cargo_target
+        target: /workspace/target
     stdin_open: true
     tty: true
+
+volumes:
+  cargo_target:

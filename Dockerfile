@@ -18,6 +18,7 @@ RUN \
     && rm -rf /var/lib/apt/lists/* \
     && rustup component add rustfmt clippy \
     && groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && mkdir /workspace/target; chown -R $USERNAME:$USERNAME /workspace/target
 
 USER $USERNAME
